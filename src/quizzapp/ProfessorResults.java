@@ -231,7 +231,7 @@ public class ProfessorResults extends JFrame {
     }
 
     private void back_btnActionPerformed(ActionEvent evt) {
-        JFrame professorDashboard = new Dashboard(currentProfessor);
+        JFrame professorDashboard = new ProfessorDashboard(currentProfessor);
         this.setVisible(false);
         professorDashboard.setVisible(true);
     }
