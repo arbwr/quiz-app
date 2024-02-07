@@ -48,10 +48,12 @@ public class ProfessorResults extends JFrame {
 
         JLabel codeLabel = new JLabel("Quiz Code");
         JLabel nameLabel = new JLabel("Quiz Name");
+        JLabel averageScoreLabel = new JLabel("Avg. Score");
         JLabel resultLabel = new JLabel("View Results");
 
         codeLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 10, 30, 30));
         nameLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 10, 30, 30));
+        averageScoreLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 10, 30, 30));
         resultLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 10, 30, 30));
 
         JButton sortAvgScoreBtn = new JButton("Sort by Avg Score");
@@ -135,10 +137,13 @@ public class ProfessorResults extends JFrame {
 
         JLabel codeLabel = new JLabel(quiz.getCode());
         JLabel nameLabel = new JLabel(quiz.getName());
+        double averageScore = Quiz.getAverageScore(quiz.getCode());
+        JLabel avgScoreLabel = new JLabel(String.valueOf(averageScore));
         JButton viewResultsButton = new JButton("View Results");
 
         codeLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 10, 40));
         nameLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 10, 40));
+        avgScoreLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 10, 40));
         viewResultsButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 10, 40));
 
         viewResultsButton.addActionListener(e -> {
@@ -147,6 +152,7 @@ public class ProfessorResults extends JFrame {
 
         panel.add(codeLabel);
         panel.add(nameLabel);
+        panel.add(avgScoreLabel);
         panel.add(viewResultsButton);
 
         return panel;

@@ -69,9 +69,11 @@ public class TakeQuizView extends JFrame {
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
-        countdownLabel = new JLabel("Time Remaining: " + duration / 60 + " min");
-        mainPanel.add(countdownLabel);
-        countdownLabel.setBounds(0, 10, 100, 20);
+        if (duration > 0) {
+            countdownLabel = new JLabel("Time Remaining: " + duration / 60 + " min");
+            mainPanel.add(countdownLabel);
+            countdownLabel.setBounds(0, 10, 100, 20);
+        }
 
         progressLabel = new JLabel("Question " + (currentQuestionIndex + 1) + " of " + quiz.getQuestionList().size() + "\n\n");
         mainPanel.add(progressLabel);
